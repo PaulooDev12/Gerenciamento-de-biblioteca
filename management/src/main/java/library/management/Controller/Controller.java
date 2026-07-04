@@ -24,11 +24,11 @@ public class Controller {
         this.servico = servico;
     }
 
-    @PostMapping("/registraraluno")
+    @PostMapping("/registrar-aluno")
     public ResponseEntity<Aluno> registrarAluno(@RequestBody CadastrarAluno request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.cadastrarAluno(request));
     }
-    @PostMapping("/emprestimo")
+    @PostMapping("/registrar-emprestimo")
     public ResponseEntity<Emprestimo> emprestimo(@RequestBody EmprestimoRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.registrar(request));
     }
@@ -41,16 +41,16 @@ public class Controller {
     public Emprestimo devolverLivro(@PathVariable Long id) {
         return servico.devolver(id);
     }
-    @GetMapping("/listaremprestimos")
+    @GetMapping("/listar-emprestimos")
     public ResponseEntity<List<EmprestimosResponse>> listarEmprestimos() {
         return ResponseEntity.status(HttpStatus.OK).body(servico.findAllEmprestimos());
     }
 
-    @PostMapping("/registrarlivro")
+    @PostMapping("/registrar-livro")
     public ResponseEntity<Livro> registrarLivro(@RequestBody LivroRequest livroreq) {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.registrarLivro(livroreq));
     }
-    @GetMapping("/filtrarativos")
+    @GetMapping("/filtrar-ativos")
     public ResponseEntity<List<EmprestimosResponse>> filtrarAtivos() {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.filtrarAtivos());
     }
