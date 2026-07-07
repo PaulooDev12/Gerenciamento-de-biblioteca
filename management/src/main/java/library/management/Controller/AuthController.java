@@ -59,5 +59,6 @@ public class AuthController {
                 .header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
                 .body("Login realizado com sucesso!");
     }
+
 }
 

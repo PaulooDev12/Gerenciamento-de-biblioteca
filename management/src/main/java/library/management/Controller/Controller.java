@@ -55,14 +55,8 @@ public class Controller {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.filtrarAtivos());
     }
 
-    @GetMapping("/filtraratrasados")
+    @GetMapping("/filtrar-atrasados")
     public ResponseEntity<List<EmprestimosResponse>> filtrarAtrasados() {
         return ResponseEntity.status(HttpStatus.CREATED).body(servico.filtrarAtrasados());
-    }
-
-    @DeleteMapping("/limparbanco")
-    public String deletar(){
-        servico.limpar();
-        return "DB limpo";
     }
 }
