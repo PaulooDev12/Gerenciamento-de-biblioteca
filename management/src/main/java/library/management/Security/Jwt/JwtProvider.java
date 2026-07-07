@@ -73,6 +73,7 @@ public class JwtProvider {
         }
         return null;
     }
+
     public ResponseCookie getCleanJwtCookie() {
         return ResponseCookie.from(jwtCookieName, "")
                 .path("/")
